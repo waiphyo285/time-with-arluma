@@ -9,16 +9,13 @@
     <!-- styles -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="./public/css/styles.css" />
-    <!-- <link rel="stylesheet" href="./public/css/fireworks.css" /> -->
 
     <!-- moment js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
 
-    <!-- Google Ads -->
-    <!-- <script data-ad-client="ca-pub-5937765593282204" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
   </head>
 
-  <body class="body" onload="clickBody()">
+  <body class="body">
     <section class="section-center">
       <!-- image -->
       <article class="img-container">
@@ -101,7 +98,6 @@
         seen. It's not easy to put up with me, but your patience brings us from
         the start to the present. Thank you so much for being with me, for
         believing me. Happy Anniversary.
-        <!-- <span class="quote-end"></span> -->
       </p>
     </section>
 
@@ -140,9 +136,9 @@
           0 < diffDuration.seconds() < 60
             ? timeDiff.push(`${("0" + diffDuration.seconds()).slice(-2)}`)
             : 00;
-          // 0 < diffDuration.milliseconds() < 60 ? timeDiff.push(`${diffDuration.milliseconds()}`) : 0;
           return timeDiff;
         };
+        
         getDiffTime();
 
         const overlayText = document.getElementById("overlay-text");
@@ -158,25 +154,6 @@
       function randomColor(opacity) {
         getNumber = () => Math.floor(Math.random() * 255);
         return `rgba(${getNumber()}, ${getNumber()}, ${getNumber()}, ${opacity})`;
-      }
-
-      function clickBody() {
-        setTimeout(
-          function () {
-            (function fadeOut() {
-              body.style.opacity = 0;
-            })();
-            (function fadeIn() {
-              body.style.opacity = 1;
-              body.style.backgroundImage = `linear-gradient(-135deg, rgba(44, 44, 88, 0.6) 2.5%, ${randomColor(
-                0.15
-              )} 2.5% 100%)`;
-            })();
-            body.onload();
-          },
-          5000,
-          this
-        );
       }
     </script>
   </body>
