@@ -368,14 +368,26 @@ hr.hr {
 
 .quote-section .quote-paragraph {
   text-align: justify;
-  color: var(--clr-primary-10);
   line-height: 1.8rem;
   font-size: 1.25rem;
+  color: var(--clr-primary-10);
 }
 
-.quote-section .quote-start,
-.quote-end {
+.quote-section .quote-start {
   font-size: 2rem;
   font-weight: bolder;
   font-family: var(--ff-secondary);
+}
+
+.quote-section .quote-end {
+  display: block;
+  text-align: right;
+  color: var(--clr-primary-10);
+}
+
+.footer p {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  color: var(--clr-primary-10)
 }

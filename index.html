@@ -21,6 +21,7 @@
 
 <body class="body" onload="clickBody()">
   <section class="section-center">
+
     <!-- image -->
     <article class="img-container">
       <img src="./public/images/our-anni.png" alt="Cover Photo" />
@@ -28,6 +29,7 @@
         <h1 class="overlay-text" id="overlay-text"></h1>
       </div>
     </article>
+
     <!-- info -->
     <article class="count-info">
       <h3>To My Arluma <span class="dot"></span></h3>
@@ -37,6 +39,7 @@
         world itself. I can't go anywhere without you as I know it’s always
         better when we’re together.
       </p>
+
       <div class="count-time">
         <!-- years -->
         <div class="count-time-format">
@@ -46,6 +49,7 @@
           </div>
         </div>
         <!-- end of years -->
+
         <!-- months -->
         <div class="count-time-format">
           <div>
@@ -54,6 +58,7 @@
           </div>
         </div>
         <!-- end of months -->
+
         <!-- days -->
         <div class="count-time-format">
           <div>
@@ -62,6 +67,7 @@
           </div>
         </div>
         <!-- end of days -->
+
         <!-- days -->
         <div class="count-time-format">
           <div>
@@ -70,6 +76,7 @@
           </div>
         </div>
         <!-- end of days -->
+
         <!-- minutes -->
         <div class="count-time-format">
           <div>
@@ -78,6 +85,7 @@
           </div>
         </div>
         <!-- end of days -->
+
         <!-- minutes -->
         <div class="count-time-format">
           <div>
@@ -86,6 +94,7 @@
           </div>
         </div>
       </div>
+
     </article>
   </section>
 
@@ -94,14 +103,12 @@
   <section class="quote-section">
     <p class="quote-paragraph">
       <span class="quote-start">A</span>
-      rluma, happy 5<sup>th</sup> anniversary! On this day I can't help but
-      remember the happiest episodes of our love and imagine what will be our
-      future, full of love until the last day of our lives. You're the person
-      in whom I find a lover, a best friend, and the kindest soul I've ever
-      seen. It's not easy to put up with me, but your patience brings us from
-      the start to the present. Thank you so much for being with me, for
-      believing me. Happy Anniversary.
-      <!-- <span class="quote-end"></span> -->
+      rluma, happy 5<sup>th</sup> anniversary! On this day I can't help but remember the happiest episodes of our love
+      and imagine what will be ourfuture, full of love until the last day of our lives. Thank you so much for being with
+      me.
+      <span class="quote-end">
+        July 26, 2021 (Mon)
+      </span>
     </p>
   </section>
 
@@ -110,13 +117,34 @@
   <section class="quote-section">
     <p class="quote-paragraph">
       <span class="quote-start">A</span>
-      rluma, happy 28<sup>th</sup> birthday! My beautiful lady, you are the
-      love of my life and I hope your birthday brings you happiness and everything
-      you have been wishing for.
-      <!-- <a href="./birthday.html"><mark>Happy birthday!</mark></a> -->
-      <!-- <span class="quote-end"></span> -->
+      rluma, happy 28<sup>th</sup> birthday! My beautiful lady, you are the love of my life and I hope your birthday
+      brings you happiness and everything you have been wishing for. And I do promise you to dream and achieve our goals
+      together.
+      <span class="quote-end">
+        May 28, 2022 (Sat)
+      </span>
     </p>
   </section>
+
+  <hr class="hr" />
+
+  <section class="quote-section">
+    <p class="quote-paragraph">
+      <span class="quote-start">A</span>
+      rluma, happy 6<sup>th</sup> anniversary! This time is the same thing like the previous anniversary. I can't wait
+      to celebrate on our special days but currently I can't. We have a hard time overcoming this situation. Live safe
+      is a sign of love.
+      <span class="quote-end">
+        Jul 26, 2022 (Tue)
+      </span>
+    </p>
+  </section>
+
+  <footer class="footer">
+    <p>
+      Made with 💖
+    </p>
+  </footer>
 
   <!-- javascript -->
   <!-- <script src="./public/js/app.js"></script> -->
@@ -130,6 +158,7 @@
       const diffDuration = moment.duration(
         moment(new Date()).diff(moment("2016-07-26 00:00"))
       );
+
       // console.log(Math.floor(diffDuration.asDays()));
       const items = document.querySelectorAll(".count-time-format h4");
       const timeDiff = [];
@@ -179,12 +208,13 @@
           (function fadeOut() {
             body.style.opacity = 0;
           })();
+
           (function fadeIn() {
+            const randomClr = randomColor(0.15);
             body.style.opacity = 1;
-            body.style.backgroundImage = `linear-gradient(-135deg, rgba(44, 44, 88, 0.6) 2.5%, ${randomColor(
-              0.15
-            )} 2.5% 100%)`;
+            body.style.backgroundImage = `linear-gradient(-135deg, rgba(44, 44, 88, 0.6) 2.5%, ${randomClr} 2.5% 100%)`;
           })();
+
           body.onload();
         },
         5000,
