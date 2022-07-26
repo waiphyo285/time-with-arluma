@@ -83,7 +83,6 @@ h2 {
 
 h3 {
   font-size: 1.25rem;
-  /* text-decoration: underline dashed var(--clr-grey-10) 5px; */
 }
 
 h4 {
@@ -147,9 +146,8 @@ Countdown Timer
 
 .img-container {
   position: relative;
-  border: solid 5px var(--clr-grey-10);
   margin-bottom: 2rem;
-  /* border-radius: .5rem; */
+  border: solid 5px var(--clr-grey-10);
 }
 
 .img-container:hover .overlay {
@@ -158,7 +156,6 @@ Countdown Timer
 }
 
 .overlay {
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -166,16 +163,17 @@ Countdown Timer
   height: 100%;
   width: 100%;
   opacity: 0;
+  position: absolute;
   transition: 0.7s ease;
   background-color: var(--clr-grey-10);
   box-shadow: var(--light-shadow);
 }
 
 .overlay-text {
-  color: var(--clr-primary-10);
-  position: absolute;
   top: 44%;
   left: 50%;
+  position: absolute;
+  color: var(--clr-primary-10);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -200,11 +198,11 @@ Countdown Timer
 
 @media screen and (min-width: 992px) {
   .section-center {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
     gap: 3rem;
     width: 95vw;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
   }
   .img-container {
     margin-bottom: 0;
