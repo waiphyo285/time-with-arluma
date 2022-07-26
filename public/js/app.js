@@ -1,92 +1,72 @@
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+// const body = document.querySelector(".body");
+// body.style.backgroundImage = `linear-gradient(-135deg, rgba(44, 44, 88, 0.6) 2.5%, ${randomColor(
+//   0.15
+// )} 2.5% 100%)`;
 
-const weekdays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+var x = setInterval(function () {
+  const diffDuration = moment.duration(
+    moment(new Date()).diff(moment("2016-07-26 00:00"))
+  );
 
-const giveaway = document.querySelector(".giveaway");
-const deadline = document.querySelector(".deadline");
-const items = document.querySelectorAll(".deadline-format h4");
+  // console.log(Math.floor(diffDuration.asDays()));
+  const items = document.querySelectorAll(".count-time-format h4");
+  const timeDiff = [];
 
-let tempDate = new Date();
-let tempYear = tempDate.getFullYear();
-let tempMonth = tempDate.getMonth();
-let tempDay = tempDate.getDate();
-// months are ZERO index based;
-const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
+  const getDiffTime = () => {
+    diffDuration.years() > 0
+      ? timeDiff.push(`${("0" + diffDuration.years()).slice(-2)}`)
+      : 00;
+    0 < diffDuration.months() < 12
+      ? timeDiff.push(`${("0" + diffDuration.months()).slice(-2)}`)
+      : 00;
+    0 < diffDuration.days() < 30
+      ? timeDiff.push(`${("0" + diffDuration.days()).slice(-2)}`)
+      : 00;
+    0 < diffDuration.hours() < 24
+      ? timeDiff.push(`${("0" + diffDuration.hours()).slice(-2)}`)
+      : 00;
+    0 < diffDuration.minutes() < 60
+      ? timeDiff.push(`${("0" + diffDuration.minutes()).slice(-2)}`)
+      : 00;
+    0 < diffDuration.seconds() < 60
+      ? timeDiff.push(`${("0" + diffDuration.seconds()).slice(-2)}`)
+      : 00;
+    // 0 < diffDuration.milliseconds() < 60 ? timeDiff.push(`${diffDuration.milliseconds()}`) : 0;
+    return timeDiff;
+  };
+  getDiffTime();
 
-// let futureDate = new Date(2020, 3, 24, 11, 30, 0);
+  const overlayText = document.getElementById("overlay-text");
+  overlayText.innerHTML = Math.floor(diffDuration.asDays()) + " Days";
 
-const year = futureDate.getFullYear();
-const hours = futureDate.getHours();
-const minutes = futureDate.getMinutes();
-
-let month = futureDate.getMonth();
-month = months[month];
-const weekday = weekdays[futureDate.getDay()];
-const date = futureDate.getDate();
-giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`;
-
-const futureTime = futureDate.getTime();
-
-function getRemaindingTime() {
-  const today = new Date().getTime();
-
-  const t = futureTime - today;
-  // 1s = 1000ms
-  // 1m = 60s
-  // 1hr = 60m
-  // 1d = 24hr
-  // values in miliseconds
-  const oneDay = 24 * 60 * 60 * 1000;
-  const oneHour = 60 * 60 * 1000;
-  const oneMinute = 60 * 1000;
-  // calculate all values
-  let days = t / oneDay;
-  days = Math.floor(days);
-  let hours = Math.floor((t % oneDay) / oneHour);
-  let minutes = Math.floor((t % oneHour) / oneMinute);
-  let seconds = Math.floor((t % oneMinute) / 1000);
-
-  // set values array
-  const values = [days, hours, minutes, seconds];
-  function format(item) {
-    if (item < 10) {
-      return (item = `0${item}`);
-    }
-    return item;
-  }
-
-  items.forEach(function (item, index) {
-    item.innerHTML = format(values[index]);
+  items.forEach((val, index) => {
+    val.innerHTML = timeDiff[index];
   });
+}, 1000);
 
-  if (t < 0) {
-    clearInterval(countdown);
-    deadline.innerHTML = `<h4 class="expired">sorry, this giveaway has expired!</h4>`;
-  }
+// Slider section
+
+function randomColor(opacity) {
+  getNumber = () => Math.floor(Math.random() * 255);
+  return `rgba(${getNumber()}, ${getNumber()}, ${getNumber()}, ${opacity})`;
 }
 
-// countdown;
-let countdown = setInterval(getRemaindingTime, 1000);
-//set initial values
-getRemaindingTime();
+    // function clickBody() {
+    //   setTimeout(
+    //     function () {
+    //       (function fadeOut() {
+    //         body.style.opacity = 0;
+    //       })();
+
+    //       (function fadeIn() {
+    //         const randomClr = randomColor(0.15);
+    //         body.style.opacity = 1;
+    //         body.style.backgroundImage = `linear-gradient(-135deg, rgba(44, 44, 88, 0.6) 2.5%, ${randomClr} 2.5% 100%)`;
+    //       })();
+
+    //       body.onload();
+    //     },
+    //     5000,
+    //     this
+    //   );
+    // }
