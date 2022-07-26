@@ -8,14 +8,30 @@
   <title>Time with Arluma</title>
 
   <!-- styles -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <link rel="stylesheet" href="./public/css/index.css" />
+  <link rel="stylesheet" href="./public/css/navbar.css" />
 
   <!-- moment js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
 </head>
 
-<body class="body" onload="clickBody()">
+<body class="body">
+  <nav>
+    <div class=" navWide">
+      <div class="wideDiv">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </div>
+    <div class="navNarrow">
+      <span>Menu</span>
+      <div class="narrowLinks hidden">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </div>
+  </nav>
+
   <section class="section-center">
     <!-- image -->
     <article class="img-container">
@@ -141,6 +157,7 @@
   </footer>
 
   <!-- javascript -->
+  <script src="./public/js/navbar.js"></script>
   <script src="./public/js/app.js"></script>
 </body>
 
