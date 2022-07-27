@@ -161,7 +161,7 @@ Countdown Timer
   opacity: 0;
   position: absolute;
   transition: 0.7s ease;
-  background-color: var(--clr-grey-10);
+  background-color: whitesmoke;
   box-shadow: var(--light-shadow);
 }
 
