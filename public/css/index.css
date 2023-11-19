@@ -13,16 +13,17 @@ Variables
 */
 
 :root {
-  --clr-grey-10: hsl(200, 36%, 96%);
-  --ff-primary: "Crimson Pro", sans-serif;
-  --ff-secondary: "Literata", sans-serif;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  --transition: all 0.3s linear;
+
+  --radius: 0.5rem;
+  --spacing: 0.25rem;
   --max-width: 1170px;
   --fixed-width: 620px;
-  --spacing: 0.25rem;
-  --radius: 0.5rem;
+  --transition: all 0.3s linear;
+  --ff-primary: "Crimson Pro", sans-serif;
+  --ff-secondary: "Literata", sans-serif;
+  --clr-grey-10: hsl(200, 36%, 96%);
+  --dark-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+  --light-shadow: 0 2px 18px rgba(0, 0, 0, 0.1);
 }
 /*
 =============== 
@@ -121,12 +122,18 @@ p {
 
 /* section */
 .section-center,
-.quote-section,
-.hr {
+.quote-section {
   width: 90vw;
   margin: 3rem auto;
+  padding: 18px 24px;
   max-width: 1080px;
+  box-shadow: var(--light-shadow);
 }
+
+.quote-section {
+  border: solid 2px var(--clr-grey-10);
+}
+
 
 main {
   min-height: 100vh;
